@@ -3,7 +3,7 @@ import Path from './components/path'
 import Navbar from './components/navbar';
 import BitcoinChart from './components/Bitcoin_chart'
 import SidePanel from './components/sidePanel'
-
+import SubTabs from './components/SubTabs';
 
 const initialData = [
   { time: '2018-12-22', value: 32.51 },
@@ -20,11 +20,14 @@ const initialData = [
 
 export default function Home() {
   return (
-    <main className="w-[100vw]   bg-[#DEDFE2] ">
+    <main className="w-[100vw] bg-[#DEDFE2]">
         <Navbar/>
         <Path/>
         <div className="w-[calc(100vw - 7rem)]  pl-[3.5rem] pr-[3.5rem] flex flex-row justify-between">
-            <BitcoinChart data={initialData}/>
+           <div>
+                <BitcoinChart data={initialData}/>
+                <SubTabs/>
+            </div>
             <SidePanel/>
         </div> 
     </main>
